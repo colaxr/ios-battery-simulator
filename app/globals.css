@@ -181,7 +181,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .stack .games { background: #d95a0d; }
 .bar-column > span { position: absolute; top: 151px; left: 50%; transform: translateX(-50%); color: #9d9da3; font-size: 26px; line-height: 34px; }
 .axis-top, .axis-bottom, .axis-average { position: absolute; left: 402px; white-space: nowrap; font-size: 26px; line-height: 31px; }
-.axis-top { top: -12px; color: #a7a7ac; }
+.axis-top { top: var(--axis-top-y); color: #a7a7ac; }
 .axis-bottom { top: 132px; color: #9a9aa0; }
 .axis-average { top: calc(var(--average-y) - 15px); color: #55d17b; }
 

@@ -60,6 +60,7 @@ export default function Home() {
   const chartMaxMinutes = Math.max(60, chartMaxHours * 60);
   const averagePercent = Math.min(86, Math.max(12, averageMinutes / chartMaxMinutes * 100));
   const averageY = 144 * (1 - averagePercent / 100);
+  const axisTopY = Math.min(-12, averageY - 48);
 
   async function exportPng() {
     if (!captureRef.current) return;
@@ -250,7 +251,10 @@ export default function Home() {
 
                   <div
                     className="chart"
-                    style={{ "--average-y": `${averageY}px` } as CSSProperties}
+                    style={{
+                      "--average-y": `${averageY}px`,
+                      "--axis-top-y": `${axisTopY}px`,
+                    } as CSSProperties}
                   >
                     <div className="chart-grid" />
                     <div className="average-line" />
