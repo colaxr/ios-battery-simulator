@@ -1,6 +1,12 @@
 @import "tailwindcss";
-@import url("/fonts/inter/index.css");
-@import url("/fonts/noto/index.css");
+
+@font-face {
+  font-family: "SF Pro Text Local";
+  src: url("../assets/fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+}
 
 :root {
   --page: #f3f1eb;
@@ -109,7 +115,8 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
   overflow: hidden;
   color: #f5f5f7;
   background: #000;
-  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "PingFang SC", "Noto Sans SC Variable", "Microsoft YaHei", sans-serif;
+  font-weight: 350;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
@@ -125,10 +132,10 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
   align-items: center;
   color: #fff;
   background: transparent;
-  font-family: Inter, sans-serif;
+  font-family: "SF Pro Text Local", "Inter Variable", sans-serif;
   font-size: 21px;
-  font-weight: 650;
-  letter-spacing: -.55px;
+  font-weight: 600;
+  letter-spacing: -.35px;
 }
 .screen-status-icons { position: absolute; inset: 0; pointer-events: none; }
 .cellular { position: absolute; top: 27px; left: 464px; width: 27px; height: 18px; display: flex; align-items: flex-end; gap: 3px; }
@@ -154,18 +161,18 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 
 .back-button { position: absolute; top: 69px; left: 25px; width: 70px; height: 70px; border: 1px solid #38383b; border-radius: 50%; background: linear-gradient(#1d1d1f, #111113); }
 .back-button i { position: absolute; top: 20px; left: 27px; width: 26px; height: 26px; border-left: 5px solid #eee; border-bottom: 5px solid #eee; transform: rotate(45deg); border-radius: 2px; }
-.screen-title { position: absolute; top: 85px; left: 190px; width: 211px; text-align: center; font-size: 34px; line-height: 52px; font-weight: 600; letter-spacing: -1.3px; }
-.device-button { position: absolute; top: 70px; right: 25px; width: 116px; height: 69px; border: 1px solid #313134; border-radius: 38px; color: #f5f5f7; background: linear-gradient(#1c1c1e, #111113); font-size: 32px; font-weight: 550; letter-spacing: -1px; }
+.screen-title { position: absolute; top: 85px; left: 190px; width: 211px; text-align: center; font-family: "SF Pro Text Local", "Inter Variable", sans-serif; font-size: 34px; line-height: 52px; font-weight: 600; letter-spacing: -.7px; }
+.device-button { position: absolute; top: 70px; right: 25px; width: 116px; height: 69px; border: 1px solid #313134; border-radius: 38px; color: #f5f5f7; background: linear-gradient(#1c1c1e, #111113); font-size: 32px; font-weight: 450; letter-spacing: -.4px; }
 
 .screen-segmented { position: absolute; top: 181px; left: 50px; width: 491px; height: 49px; display: flex; padding: 3px; border-radius: 25px; background: #29292e; }
-.screen-segmented button { flex: 1; border: 0; border-radius: 23px; color: #f3f3f5; background: transparent; font-size: 21px; }
+.screen-segmented button { flex: 1; border: 0; border-radius: 23px; color: #f3f3f5; background: transparent; font-size: 21px; font-weight: 400; letter-spacing: -.2px; }
 .screen-segmented .selected { background: #8a8a91; box-shadow: 0 1px 2px #0008; }
-.screen-time-heading { position: absolute; top: 288px; left: 51px; margin: 0; color: #a9a9ae; font-size: 31px; line-height: 42px; font-weight: 600; letter-spacing: -1.3px; }
+.screen-time-heading { position: absolute; top: 288px; left: 51px; margin: 0; color: #a9a9ae; font-size: 31px; line-height: 42px; font-weight: 520; letter-spacing: -.7px; }
 
 .summary-card { position: absolute; top: 341px; left: 26px; width: 539px; height: 656px; border-radius: 35px; background: #242426; }
-.daily-label { position: absolute; top: 28px; left: 25px; color: #a8a8ad; font-size: 31px; line-height: 44px; letter-spacing: -1.3px; }
-.daily-value { position: absolute; top: 75px; left: 25px; color: #f4f4f6; font-size: 57px; line-height: 68px; font-weight: 400; letter-spacing: -2.9px; white-space: nowrap; }
-.comparison-line { position: absolute; top: 143px; left: 25px; display: flex; align-items: center; gap: 7px; color: #aaaab0; font-size: 31px; line-height: 42px; letter-spacing: -1.5px; }
+.daily-label { position: absolute; top: 28px; left: 25px; color: #a8a8ad; font-size: 31px; line-height: 44px; font-weight: 350; letter-spacing: -.7px; }
+.daily-value { position: absolute; top: 75px; left: 25px; color: #f4f4f6; font-size: 57px; line-height: 68px; font-weight: 350; letter-spacing: -1.8px; white-space: nowrap; }
+.comparison-line { position: absolute; top: 143px; left: 25px; display: flex; align-items: center; gap: 7px; color: #aaaab0; font-size: 31px; line-height: 42px; font-weight: 350; letter-spacing: -.8px; }
 .comparison-line i { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; color: #252527; background: #aaaab0; font: 900 20px/23px Arial, sans-serif; font-style: normal; }
 
 .chart { position: absolute; top: 196px; left: 25px; width: 489px; height: 191px; }
@@ -179,34 +186,34 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .stack .social { background: #126bf1; }
 .stack .creative { background: #0a9fa8; }
 .stack .games { background: #d95a0d; }
-.bar-column > span { position: absolute; top: 151px; left: 50%; transform: translateX(-50%); color: #9d9da3; font-size: 26px; line-height: 34px; }
-.axis-top, .axis-bottom, .axis-average { position: absolute; left: 402px; white-space: nowrap; font-size: 26px; line-height: 31px; }
+.bar-column > span { position: absolute; top: 151px; left: 50%; transform: translateX(-50%); color: #9d9da3; font-size: 26px; line-height: 34px; font-weight: 350; }
+.axis-top, .axis-bottom, .axis-average { position: absolute; left: 402px; white-space: nowrap; font-size: 26px; line-height: 31px; font-weight: 350; }
 .axis-top { top: var(--axis-top-y); color: #a7a7ac; }
 .axis-bottom { top: 132px; color: #9a9aa0; }
 .axis-average { top: calc(var(--average-y) - 15px); color: #55d17b; }
 
 .category { position: absolute; display: flex; flex-direction: column; }
-.category span { font-size: 29px; line-height: 37px; }
-.category b { color: #f4f4f6; font-size: 28px; line-height: 41px; font-weight: 400; letter-spacing: -1px; white-space: nowrap; }
+.category span { font-size: 29px; line-height: 37px; font-weight: 400; }
+.category b { color: #f4f4f6; font-size: 28px; line-height: 41px; font-weight: 350; letter-spacing: -.45px; white-space: nowrap; }
 .category-social { top: 397px; left: 25px; color: #31a9f5; }
 .category-creative { top: 397px; left: 340px; color: #38d7c4; }
 .category-games { top: 476px; left: 25px; color: #ed762f; }
 .card-divider { position: absolute; left: 25px; right: 25px; top: 565px; height: 1px; background: #555558; }
 .total-row { position: absolute; left: 25px; right: 25px; top: 591px; display: flex; justify-content: space-between; align-items: baseline; }
-.total-row span { font-size: 30px; letter-spacing: -1.3px; }
-.total-row b { color: #a2a2a7; font-size: 31px; font-weight: 400; letter-spacing: -1.5px; }
+.total-row span { font-size: 30px; font-weight: 400; letter-spacing: -.65px; }
+.total-row b { color: #a2a2a7; font-size: 31px; font-weight: 350; letter-spacing: -.8px; }
 
-.updated-line { position: absolute; top: 1013px; left: 51px; color: #a3a3a9; font-size: 25px; line-height: 38px; letter-spacing: -.8px; }
+.updated-line { position: absolute; top: 1013px; left: 51px; color: #a3a3a9; font-size: 25px; line-height: 38px; font-weight: 350; letter-spacing: -.35px; }
 .most-used-title { position: absolute; top: 1090px; left: 51px; right: 51px; display: flex; justify-content: space-between; align-items: center; }
-.most-used-title span { color: #a4a4aa; font-size: 30px; font-weight: 600; letter-spacing: -1.2px; }
-.most-used-title button { border: 0; padding: 0; color: #4d83dc; background: transparent; font-size: 30px; letter-spacing: -1.1px; }
+.most-used-title span { color: #a4a4aa; font-size: 30px; font-weight: 520; letter-spacing: -.65px; }
+.most-used-title button { border: 0; padding: 0; color: #4d83dc; background: transparent; font-size: 30px; font-weight: 400; letter-spacing: -.5px; }
 .usage-card { position: absolute; top: 1145px; left: 26px; width: 539px; min-height: 300px; overflow: hidden; border-radius: 35px; background: #242426; }
 .usage-row { position: relative; height: 82px; display: grid; grid-template-columns: 68px 1fr 30px; align-items: center; padding: 0 24px; }
 .usage-row > img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
 .usage-main { min-width: 0; align-self: stretch; padding-top: 9px; }
 .usage-main > div { height: 43px; display: flex; align-items: center; gap: 8px; }
-.usage-main span { font-size: 29px; line-height: 40px; letter-spacing: -1.2px; white-space: nowrap; }
-.usage-main b { margin-left: auto; color: #9e9ea4; font-size: 24px; line-height: 37px; font-weight: 400; letter-spacing: -1px; white-space: nowrap; }
+.usage-main span { font-size: 29px; line-height: 40px; font-weight: 450; letter-spacing: -.55px; white-space: nowrap; }
+.usage-main b { margin-left: auto; color: #9e9ea4; font-size: 24px; line-height: 37px; font-weight: 350; letter-spacing: -.45px; white-space: nowrap; }
 .usage-main > i { display: block; max-width: 100%; height: 6px; border-radius: 4px; background: #505055; }
 .chevron { width: 15px; height: 15px; margin-left: 8px; border-top: 4px solid #8c8c91; border-right: 4px solid #8c8c91; transform: rotate(45deg); }
 .usage-divider { position: absolute; left: 92px; right: 24px; bottom: 0; height: 1px; background: #505054; }
