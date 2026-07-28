@@ -97,7 +97,7 @@ export default function Home() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "iphone-15-pro-screen-time-1179x2556.png";
+      link.download = createExportFilename();
       link.click();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
     } catch (error) {
@@ -120,7 +120,6 @@ export default function Home() {
         <div>
           <span className="kicker">IOS SCREEN TIME STUDIO</span>
           <h1>屏幕时间截图模拟器</h1>
-          <p>以最终参考图为唯一基准，导出真实 iPhone 15 Pro 截图尺寸 1179 × 2556。</p>
         </div>
         <button className="top-export" onClick={exportPng} disabled={exporting}>
           {exporting ? "正在生成…" : "导出 PNG"}
@@ -345,6 +344,23 @@ function MinuteInput({ label, value, onChange }: { label: string; value: number;
 
 function stripLeadingZero(value: string) {
   return value.replace(/^0/, "");
+}
+
+function createExportFilename() {
+  const now = new Date();
+  const randomNumber = crypto.getRandomValues(new Uint32Array(1))[0] % 1_000_000_000;
+  const date = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0"),
+  ].join("");
+  const time = [
+    String(now.getHours()).padStart(2, "0"),
+    String(now.getMinutes()).padStart(2, "0"),
+    String(now.getSeconds()).padStart(2, "0"),
+  ].join("");
+
+  return `${String(randomNumber).padStart(9, "0")}_${date}_${time}.png`;
 }
 
 function formatMinutes(minutes: number) {
