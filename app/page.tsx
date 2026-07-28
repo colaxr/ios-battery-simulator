@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { toCanvas } from "html-to-image";
 
 type UsageApp = {
@@ -58,6 +58,8 @@ export default function Home() {
     gameMinutes / categoryTotal,
   ];
   const chartMaxMinutes = Math.max(60, chartMaxHours * 60);
+  const averagePercent = Math.min(86, Math.max(12, averageMinutes / chartMaxMinutes * 100));
+  const averageY = 144 * (1 - averagePercent / 100);
 
   async function exportPng() {
     if (!captureRef.current) return;
@@ -246,9 +248,12 @@ export default function Home() {
                     <span>与上周比浮动{Math.abs(comparison)}%</span>
                   </div>
 
-                  <div className="chart">
+                  <div
+                    className="chart"
+                    style={{ "--average-y": `${averageY}px` } as CSSProperties}
+                  >
                     <div className="chart-grid" />
-                    <div className="average-line" style={{ bottom: `${Math.min(86, Math.max(12, averageMinutes / chartMaxMinutes * 100))}%` }} />
+                    <div className="average-line" />
                     <div className="bars">
                       {dayFactors.map((factor, index) => {
                         const totalHeight = Math.min(94, averageMinutes * factor / chartMaxMinutes * 100);

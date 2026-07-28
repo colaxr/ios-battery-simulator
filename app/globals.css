@@ -171,7 +171,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .chart { position: absolute; top: 196px; left: 25px; width: 489px; height: 191px; }
 .chart-grid { position: absolute; left: 0; top: 0; width: 394px; height: 144px; border-top: 1px solid #58585b; border-bottom: 1px solid #58585b; background-image: linear-gradient(to right, #4a4a4d 1px, transparent 1px), linear-gradient(to bottom, #4a4a4d 1px, transparent 1px); background-size: 56px 100%, 100% 36px; }
 .chart-grid:after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to bottom, transparent 97%, #0000 100%); }
-.average-line { position: absolute; left: 0; width: 394px; border-top: 2px dashed #65b17a; z-index: 3; }
+.average-line { position: absolute; top: var(--average-y); left: 0; width: 394px; border-top: 2px dashed #65b17a; z-index: 3; }
 .bars { position: absolute; left: 0; top: 0; width: 394px; height: 144px; display: grid; grid-template-columns: repeat(7, 1fr); }
 .bar-column { position: relative; height: 144px; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 0; }
 .bar-column .stack { width: 29px; display: flex; flex-direction: column-reverse; overflow: hidden; }
@@ -183,7 +183,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); }
 .axis-top, .axis-bottom, .axis-average { position: absolute; left: 402px; white-space: nowrap; font-size: 26px; line-height: 31px; }
 .axis-top { top: -12px; color: #a7a7ac; }
 .axis-bottom { top: 132px; color: #9a9aa0; }
-.axis-average { top: 40px; color: #55d17b; }
+.axis-average { top: calc(var(--average-y) - 15px); color: #55d17b; }
 
 .category { position: absolute; display: flex; flex-direction: column; }
 .category span { font-size: 29px; line-height: 37px; }
